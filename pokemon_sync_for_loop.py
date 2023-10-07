@@ -14,9 +14,12 @@ def get_random_pokemon_name_sync():
 
 
 def main():
+    time_before = time.perf_counter()
     for _ in range(20):
         pokemon_name = get_random_pokemon_name_sync()
         print(f"Pokemon name: {pokemon_name}")
+    time_after = time.perf_counter() - time_before
+    print(f"Time taken: {time_after:.2f} seconds")
 
 
 if __name__ == "__main__":
